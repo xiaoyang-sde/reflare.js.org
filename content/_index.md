@@ -86,7 +86,7 @@ wrangler publish
 ```ts
 const config = {
   upstream: {
-    domain: 'en.wikipedia.org',
+    domain: 'httpbin.org',
     protocol: 'https',
     port: 443,
     path: '/',
