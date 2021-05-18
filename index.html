@@ -1,0 +1,94 @@
+<!doctype html><html lang=en dir=ltr><head><meta name=generator content="Hugo 0.83.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Releases | Examples | Contribute | Buy Me a Coffee
+ Rocket Booster is the edge-rendered speed booster for web applications, storage platforms, and RESTful APIs. It&rsquo;s a reverse proxy that sits in front of web servers, intercepting requests from clients.
+ Performance: Deploy to a network of data centers powered by Cloudflare. Serverless: No VMs, no servers, and no containers to spin up or manage."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Introduction"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://booster.js.org/"><title>Introduction | Rocket Booster</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.081ffa4b0f891f24dce99593a42bc0d70143a0e7eed61be5b3c5104add790ad9.css integrity="sha256-CB/6Sw+JHyTc6ZWTpCvA1wFDoOfu1hvls8UQSt15Ctk="><script defer src=/en.search.min.fbac7b42046a2aadf4fec32ae82b2e77beb54830a39904ef1f017564637e6660.js integrity="sha256-+6x7QgRqKq30/sMq6Csud761SDCjmQTvHwF1ZGN+ZmA="></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk="></script><link rel=alternate type=application/rss+xml href=https://booster.js.org/index.xml title="Rocket Booster"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/><span>Rocket Booster</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul></ul><ul><li><a href=https://github.com/rocket-booster/rocket-booster target=_blank rel=noopener>GitHub - Rocket Booster</a></li><li><a href=https://github.com/rocket-booster/rocket-booster-template target=_blank rel=noopener>GitHub - Template</a></li></ul></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Introduction</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#build-and-deploy>Build and Deploy</a></li><li><a href=#configuration>Configuration</a><ul><li><a href=#upstream>Upstream</a></li><li><a href=#optimization>Optimization</a></li><li><a href=#cross-origin-resource-sharing-cors>Cross-Origin Resource Sharing (CORS)</a></li></ul></li><li><a href=#contribute>Contribute</a><ul><li><a href=#current-contributors>Current contributors</a></li></ul></li><li><a href=#support-rocket-booster>Support Rocket Booster</a></li></ul></li></ul></nav></aside></header><article class=markdown><p><a href=https://github.com//rocket-booster/rocket-booster><img src=https://raw.githubusercontent.com/rocket-booster/rocket-booster/master/.github/img/header.png alt=Header></a></p><div align=center><p><a href=https://github.com/rocket-booster/rocket-booster/stargazers><img src="https://img.shields.io/github/stars/rocket-booster/rocket-booster?style=for-the-badge" alt="GitHub stars"></a>
+<a href=https://github.com/rocket-booster/rocket-booster/network/members><img src="https://img.shields.io/github/forks/rocket-booster/rocket-booster.svg?style=for-the-badge" alt=LICENSE></a>
+<a href=https://www.npmjs.com/package/rocket-booster><img src="https://img.shields.io/npm/v/rocket-booster?style=for-the-badge" alt="Package version"></a>
+<a href=https://www.npmjs.com/package/rocket-booster><img src="https://img.shields.io/bundlephobia/minzip/rocket-booster?style=for-the-badge" alt="Bundle size"></a></p><p><a href=https://forthebadge.com><img src=https://forthebadge.com/images/badges/made-with-typescript.svg alt=forthebadge></a>
+<a href=https://forthebadge.com><img src=https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg alt=forthebadge></a>
+<a href=https://forthebadge.com><img src=https://forthebadge.com/images/badges/powered-by-netflix.svg alt=forthebadge></a></p><p><a href=https://github.com/rocket-booster/rocket-booster/releases>Releases</a> |
+<a href=/#examples>Examples</a> |
+<a href=/#contribute>Contribute</a> |
+<a href=https://www.buymeacoffee.com/xiaoyangliu>Buy Me a Coffee</a></p></div><p><strong>Rocket Booster</strong> is the edge-rendered speed booster for web applications, storage platforms, and RESTful APIs. It&rsquo;s a reverse proxy that sits in front of web servers, intercepting requests from clients.</p><ul><li>Performance: Deploy to a network of data centers powered by Cloudflare.</li><li>Serverless: No VMs, no servers, and no containers to spin up or manage.</li><li>Optimization: Minify HTML/CSS/JS files, compress images, cache static assets.</li><li>Cross-Origin: Add necessary CORS headers to the proxied response.</li><li>Firewall: Block traffics from specific IP addresses, countries, or User-Agent.</li><li>Network: Enable HTTPS, HTTP/3 (with QUIC), TLS 1.3, and IPv6 for web applications.</li><li>Load Balance: Distribute incoming traffics evenly among different servers.</li></ul><h2 id=build-and-deploy>Build and Deploy
+<a class=anchor href=#build-and-deploy>#</a></h2><ol><li><a href=https://github.com/cloudflare/wrangler#installation>Install Wrangler CLI</a></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>npm install @cloudflare/wrangler -g
+</code></pre></div><ol start=2><li>Generate from
+<a href=https://github.com/rocket-booster/rocket-booster-template>rocket-booster-template</a></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>wrangler generate booster https://github.com/rocket-booster/rocket-booster-template
+</code></pre></div><ol start=3><li>Install dependencies</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>cd booster
+
+npm install
+</code></pre></div><ol start=4><li>Authenticate Wrangler with a Cloudflare API Token</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>wrangler login
+
+wrangler config
+</code></pre></div><ol start=5><li><p>Edit <code>src/index.js</code> to configure Rocket Booster</p></li><li><p>Build and publish to Cloudflare Workers</p></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>wrangler build
+
+wrangler publish
+</code></pre></div><h2 id=configuration>Configuration
+<a class=anchor href=#configuration>#</a></h2><h3 id=upstream>Upstream
+<a class=anchor href=#upstream>#</a></h3><ul><li><code>domain</code>: The domain name of the upstream server.</li><li><code>protocol</code>: The protocol scheme of the upstream server. (Optional)</li><li><code>port</code>: The port of the upstream server. (Optional)</li><li><code>path</code>: The path of the upstream server. (Optional)</li><li><code>timeout</code>: The maximum wait time on a request to the upstream server. (Optional)</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>config</span> <span style=color:#f92672>=</span> {
+  <span style=color:#a6e22e>upstream</span><span style=color:#f92672>:</span> {
+    <span style=color:#a6e22e>domain</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;httpbin.org&#39;</span>,
+    <span style=color:#a6e22e>protocol</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;https&#39;</span>,
+    <span style=color:#a6e22e>port</span>: <span style=color:#66d9ef>443</span>,
+    <span style=color:#a6e22e>path</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;/&#39;</span>,
+    <span style=color:#a6e22e>timeout</span>: <span style=color:#66d9ef>10000</span>,
+  },
+  <span style=color:#75715e>/* ... */</span>
+};
+</code></pre></div><p>To load balance HTTP traffic to a group of servers, pass an array of server objects to <code>upstream</code>. Each request will be passed to a randomly selected server.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>config</span> <span style=color:#f92672>=</span> {
+  <span style=color:#a6e22e>upstream</span><span style=color:#f92672>:</span> [
+    {
+      <span style=color:#a6e22e>domain</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;s1.example.com&#39;</span>,
+      <span style=color:#a6e22e>protocol</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;https&#39;</span>,
+    },
+    {
+      <span style=color:#a6e22e>domain</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;s2.example.com&#39;</span>,
+      <span style=color:#a6e22e>protocol</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;https&#39;</span>,
+    },
+    {
+      <span style=color:#a6e22e>domain</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;s3.example.com&#39;</span>,
+      <span style=color:#a6e22e>protocol</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;https&#39;</span>,
+    },
+  ],
+  <span style=color:#75715e>/* ... */</span>
+};
+</code></pre></div><h3 id=optimization>Optimization
+<a class=anchor href=#optimization>#</a></h3><ul><li><code>minify</code>: Remove unnecessary characters (like whitespace, comments, etc.) from HTML, CSS, and JavaScript files.</li><li><code>mirage</code>: Detect screen size and connection speed to optimally deliver images for the current browser window.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>config</span> <span style=color:#f92672>=</span> {
+  <span style=color:#75715e>/* ... */</span>
+  <span style=color:#a6e22e>optimization</span><span style=color:#f92672>:</span> {
+    <span style=color:#a6e22e>mirage</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#a6e22e>minify</span><span style=color:#f92672>:</span> {
+      <span style=color:#a6e22e>javascript</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#a6e22e>css</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#a6e22e>html</span>: <span style=color:#66d9ef>true</span>,
+    },
+  },
+};
+</code></pre></div><p>Several optimizations are enabled by default.</p><ul><li><a href=https://brotli.org/>Brotli</a>: Speed up page load times for visitor’s HTTPS traffic by applying Brotli compression.</li><li><a href=https://developers.google.com/web/fundamentals/performance/http2>HTTP/2</a>: Improve page load time by connection multiplexing, header compression, and server push.</li><li><a href=https://en.wikipedia.org/wiki/HTTP/3>HTTP/3 with QUIC</a>: Accelerate HTTP requests by using QUIC, which provides encryption and performance improvements compared to TCP and TLS.</li><li>0-RTT Connection Resumption: Improve performance for clients who have previously connected to the website.</li></ul><h3 id=cross-origin-resource-sharing-cors>Cross-Origin Resource Sharing (CORS)
+<a class=anchor href=#cross-origin-resource-sharing-cors>#</a></h3><ul><li><code>origins</code>: The origins to allow requests from.</li><li><code>methods</code>: The methods which the origins are allowed to access.</li><li><code>allowHeaders</code>: Headers to accept from the client.</li><li><code>exposeHeaders</code>: Give explicit permissions for the client to read headers in CORS responses.</li><li><code>credentials</code>: Inject the <code>Access-Control-Allow-Credentials</code> header in responses.</li><li><code>maxAge</code>: Specify the value in seconds for how long the response to the preflight request can be cached for.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>config</span> <span style=color:#f92672>=</span> {
+  <span style=color:#75715e>/* ... */</span>
+  <span style=color:#a6e22e>cors</span><span style=color:#f92672>:</span> {
+    <span style=color:#a6e22e>origins</span><span style=color:#f92672>:</span> [
+      <span style=color:#e6db74>&#39;https://example.com&#39;</span>,
+    ],
+    <span style=color:#a6e22e>methods</span><span style=color:#f92672>:</span> [
+      <span style=color:#e6db74>&#39;GET&#39;</span>,
+      <span style=color:#e6db74>&#39;POST&#39;</span>,
+    ],
+    <span style=color:#a6e22e>allowHeaders</span><span style=color:#f92672>:</span> [
+      <span style=color:#e6db74>&#39;X-Forwarded-For&#39;</span>,
+    ],
+    <span style=color:#a6e22e>exposeHeaders</span><span style=color:#f92672>:</span> [
+      <span style=color:#e6db74>&#39;X-Forwarded-For&#39;</span>,
+    ],
+    <span style=color:#a6e22e>credentials</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#a6e22e>maxAge</span>: <span style=color:#66d9ef>86400</span>,
+  },
+};
+</code></pre></div><h2 id=contribute>Contribute
+<a class=anchor href=#contribute>#</a></h2><ul><li><code>Feature Request</code>: Create an issue with the <strong>Feature request</strong> template.</li><li><code>Bug Reports</code>: Create an issue with the <strong>Bug report</strong> template.</li><li><code>Improvements to the booster.js</code>: Fork the repository, edit code, deploy it to Cloudflare Workers, and then create a pull request.</li><li><code>Add Config Examples</code>: Fork the repository, write an example config for any website, save it to the <code>examples</code> directory, and then create a pull request.</li></ul><h3 id=current-contributors>Current contributors
+<a class=anchor href=#current-contributors>#</a></h3><p><a href=https://github.com/rocket-booster/rocket-booster/graphs/contributors><img src="https://contributors-img.web.app/image?repo=rocket-booster/rocket-booster" alt=Contributors></a></p><h2 id=support-rocket-booster>Support Rocket Booster
+<a class=anchor href=#support-rocket-booster>#</a></h2><p>We accept donations through these channels:</p><ul><li><a href=https://www.buymeacoffee.com/xiaoyangliu>Buy Me a Coffee</a></li><li>Bitcoin: 1Eb4n6eEyyKjbu3feA9oAQAnZo1K46UvXN</li><li>Ethereum: 0x16145d98625c0b2aa265773970ca090bf783d5ae</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/rocket-booster/booster.js.org/commit/3b081da939915b75bea62860cbad7738524b3a8a title="Last modified by Xiaoyang Liu | May 18, 2021" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>May 18, 2021</span></a></div><div><a class="flex align-center" href=https://github.com/rocket-booster/booster.js.org/edit/master/content/_index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div><script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#build-and-deploy>Build and Deploy</a></li><li><a href=#configuration>Configuration</a><ul><li><a href=#upstream>Upstream</a></li><li><a href=#optimization>Optimization</a></li><li><a href=#cross-origin-resource-sharing-cors>Cross-Origin Resource Sharing (CORS)</a></li></ul></li><li><a href=#contribute>Contribute</a><ul><li><a href=#current-contributors>Current contributors</a></li></ul></li><li><a href=#support-rocket-booster>Support Rocket Booster</a></li></ul></li></ul></nav></div></aside></main></body></html>
