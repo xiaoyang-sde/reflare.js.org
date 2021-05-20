@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: README
 type: docs
 ---
 
@@ -186,11 +186,3 @@ const config = {
 ### Current contributors
 
 [![Contributors](https://contributors-img.web.app/image?repo=rocket-booster/rocket-booster)](https://github.com/rocket-booster/rocket-booster/graphs/contributors)
-
-## Support Rocket Booster
-
-We accept donations through these channels:
-
-- [Buy Me a Coffee](https://www.buymeacoffee.com/xiaoyangliu)
-- Bitcoin: 1Eb4n6eEyyKjbu3feA9oAQAnZo1K46UvXN
-- Ethereum: 0x16145d98625c0b2aa265773970ca090bf783d5ae
