@@ -5,7 +5,7 @@ slug: /
 
 # Introduction
 
-![Header](https://raw.githubusercontent.com/booster-labs/rocket-booster/master/.github/img/header.png)
+![Header](/img/header.png)
 
 <div align="center">
 

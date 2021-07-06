@@ -5,6 +5,7 @@ sidebar_position: 3
 # Examples
 
 ## Live Examples
+
 ### MDN Web Docs Mirror
 
 ```ts
@@ -48,6 +49,7 @@ const config = {
 [Live Demo](https://template.lhhniubility.workers.dev/)
 
 ## And More...
+
 ### WebSocket Proxy
 
 `rocket-booster` could proxy WebSocket traffic to upstream servers. No additional configuration is required.
