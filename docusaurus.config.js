@@ -9,15 +9,12 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'booster-labs', // Usually your GitHub org/user name.
   projectName: 'booster.js.org', // Usually your repo name.
   trailingSlash: true,
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap',
-  ],
-  plugins: [
-    '@docusaurus/plugin-google-gtag',
   ],
   themeConfig: {
     gtag: {
