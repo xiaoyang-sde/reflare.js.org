@@ -17,6 +17,10 @@ module.exports = {
     'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap',
   ],
   themeConfig: {
+    algolia: {
+      apiKey: '8bf676a18a51f6832092853bf43fa683',
+      indexName: 'booster-js',
+    },
     gtag: {
       trackingID: 'G-TJRVK94CTH',
       anonymizeIP: true,
