@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Examples
+# 📔 Examples
 
 ## Live Examples
 
@@ -61,5 +61,34 @@ const config = {
     domain: 'echo.websocket.org',
     protocol: 'https',
   },
+};
+```
+### S3 Bucket with custom response behavior
+
+`rocket-booster` could set custom headers to request and response, add CORS header, or deliver custom error responses. Set up a reverse proxy for [https://example.s3.amazonaws.com](https://example.s3.amazonaws.com):
+
+```ts
+const config = {
+  upstream: {
+    domain: 'example.s3.amazonaws.com',
+    protocol: 'https',
+  },
+
+  header: {
+    response: {
+      'x-response-header': 'Hello from rocket-booster',
+    },
+  },
+
+  cors: {
+    origin: ['https://www.example.com'],
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
+
+  error: [{
+    errorCode: 404,
+    responsePath: '/404.html',
+  }],
 };
 ```

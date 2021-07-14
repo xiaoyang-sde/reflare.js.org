@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Build and Deploy
+# 📦 Build and Deploy
 
 ## Integrate with existing project
 
