@@ -2,8 +2,7 @@
 sidebar_position: 5
 ---
 
-# Contributing
-
+# 🌎 Contributing
 ## Process
 
 - **Request a feature**: Create an issue with the **Feature request** template.
