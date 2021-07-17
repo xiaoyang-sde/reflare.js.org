@@ -14,7 +14,7 @@ module.exports = {
   projectName: 'booster.js.org', // Usually your repo name.
   trailingSlash: true,
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap',
+    'https://fonts.googleapis.com/css2?family=Inter&display=swap',
   ],
   themeConfig: {
     algolia: {
