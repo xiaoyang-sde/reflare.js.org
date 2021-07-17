@@ -17,11 +17,6 @@ slug: /
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-
-[📦 Releases](https://github.com/booster-labs/rocket-booster/releases) |
-[📔 Examples](#-examples) |
-[⚙️ Configuration](#-configuration) |
-[🌎 Contributing](#-contributing)
 </div>
 
 🚀 **rocket-booster** is a serverless reverse proxy and load balancing library built for [Cloudflare Workers](https://workers.cloudflare.com). It sits in front of web servers (e.g. web application, storage platform, or RESTful API), forwards HTTP requests or WebSocket traffics from clients to upstream servers and transforms responses with several optimizations to improve page loading time.
