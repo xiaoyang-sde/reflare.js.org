@@ -5,7 +5,7 @@ slug: /
 
 # Introduction
 
-![Header](/img/header.png)
+![Header](/img/header.jpg)
 
 <div align="center">
 
