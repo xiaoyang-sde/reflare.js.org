@@ -1,7 +1,7 @@
-# Cross-Origin Resource Sharing
+# Cross-Origin Resource Sharing (CORS)
 
 - `origin`: Configures the `Access-Control-Allow-Origin` CORS header. (optional, defaults to `false`)
-  - `boolean`: set to `true` to reflect the request origin, or set to `false` to disable CORS.
+  - `boolean`: set to `true` to reflect the origin of the request, or set to `false` to disable CORS.
   - `string[]`: an array of acceptable origins.
   - `*`: allow any origin to access the resource.
 
@@ -16,7 +16,7 @@
 - `maxAge`: Configures the `Access-Control-Max-Age` CORS header. Set to an integer to pass the header, otherwise it is omitted. (optional)
 
 ```ts
-const config = {
+proxy.use('/', {
   /* ... */
   cors: {
     origin: true,
@@ -33,5 +33,5 @@ const config = {
     credentials: true,
     maxAge: 86400,
   },
-};
+});
 ```

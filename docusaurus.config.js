@@ -10,7 +10,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'booster-labs', // Usually your GitHub org/user name.
+  organizationName: 'xiaoyang-sde', // Usually your GitHub org/user name.
   projectName: 'booster.js.org', // Usually your repo name.
   trailingSlash: true,
   stylesheets: [
@@ -45,7 +45,7 @@ module.exports = {
           label: 'Examples',
         },
         {
-          href: 'https://github.com/booster-labs/rocket-booster',
+          href: 'https://github.com/xiaoyang-sde/rocket-booster',
           label: 'GitHub',
           position: 'left',
         },
@@ -76,19 +76,19 @@ module.exports = {
           items: [
             {
               label: 'GitHub Repository',
-              href: 'https://github.com/booster-labs/rocket-booster',
+              href: 'https://github.com/xiaoyang-sde/rocket-booster',
             },
             {
               label: 'GitHub Issue Tracker',
-              href: 'https://github.com/booster-labs/rocket-booster/issues',
+              href: 'https://github.com/xiaoyang-sde/rocket-booster/issues',
             },
             {
               label: 'Code Coverage',
-              href: 'https://app.codecov.io/gh/booster-labs/rocket-booster/',
+              href: 'https://app.codecov.io/gh/xiaoyang-sde/rocket-booster/',
             },
             {
               label: 'Build Status',
-              href: 'https://github.com/booster-labs/rocket-booster/actions',
+              href: 'https://github.com/xiaoyang-sde/rocket-booster/actions',
             },
           ],
         },
@@ -97,7 +97,7 @@ module.exports = {
           items: [
             {
               label: 'Template',
-              href: 'https://github.com/booster-labs/rocket-booster-template',
+              href: 'https://github.com/xiaoyang-sde/rocket-booster-template',
             },
             {
               label: 'Live Demo',
@@ -122,7 +122,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/booster-labs/booster.js.org/edit/master/',
+            'https://github.com/xiaoyang-sde/booster.js.org/edit/master/',
         },
         blog: {
           showReadingTime: true,
