@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbooster_js_org=self.webpackChunkbooster_js_org||[]).push([[477],{10:function(s){s.exports={blogPosts:[]}}}]);
