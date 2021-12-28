@@ -1,12 +1,12 @@
-# Custom Headers
+# Headers
 
 - `request`: Sets request header going upstream to the backend. Accepts an object. (optional, defaults to `{}`)
 - `response`: Sets response header coming downstream to the client. Accepts an object. (optional, defaults to `{}`)
 
 ```ts
-const config = {
+proxy.use('/', {
   /* ... */
-  header: {
+  headers: {
     request: {
       'x-example-header': 'hello server',
     },
@@ -14,5 +14,5 @@ const config = {
       'x-example-header': 'hello client',
     },
   },
-};
+});
 ```
