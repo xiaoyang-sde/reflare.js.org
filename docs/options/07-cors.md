@@ -16,7 +16,8 @@
 - `maxAge`: Configures the `Access-Control-Max-Age` CORS header. Set to an integer to pass the header, otherwise it is omitted. (optional)
 
 ```ts
-proxy.use('/', {
+reflare.push({
+  path: '/*',
   /* ... */
   cors: {
     origin: true,
@@ -24,10 +25,10 @@ proxy.use('/', {
       'GET',
       'POST',
     ],
-    allowHeaders: [
+    allowedHeaders: [
       'Example-Header',
     ],
-    exposeHeaders: [
+    exposedHeaders: [
       'Example-Header',
     ],
     credentials: true,

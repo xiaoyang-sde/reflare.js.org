@@ -3,7 +3,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Booster Labs',
+  title: 'Reflare',
   tagline: 'Serverless reverse proxy and load balancer library built for Cloudflare Workers.',
   url: 'https://booster.js.org',
   baseUrl: '/',
@@ -26,10 +26,10 @@ module.exports = {
       anonymizeIP: true,
     },
     navbar: {
-      title: 'Booster Labs',
+      title: 'Reflare',
       logo: {
-        alt: 'Booster Labs',
-        src: 'img/logo.png',
+        alt: 'Reflare',
+        src: 'img/favicon.png',
       },
       items: [
         {
@@ -45,7 +45,7 @@ module.exports = {
           label: 'Examples',
         },
         {
-          href: 'https://github.com/xiaoyang-sde/rocket-booster',
+          href: 'https://github.com/xiaoyang-sde/reflare',
           label: 'GitHub',
           position: 'left',
         },
@@ -76,19 +76,19 @@ module.exports = {
           items: [
             {
               label: 'GitHub Repository',
-              href: 'https://github.com/xiaoyang-sde/rocket-booster',
+              href: 'https://github.com/xiaoyang-sde/reflare',
             },
             {
               label: 'GitHub Issue Tracker',
-              href: 'https://github.com/xiaoyang-sde/rocket-booster/issues',
+              href: 'https://github.com/xiaoyang-sde/reflare/issues',
             },
             {
               label: 'Code Coverage',
-              href: 'https://app.codecov.io/gh/xiaoyang-sde/rocket-booster/',
+              href: 'https://app.codecov.io/gh/xiaoyang-sde/reflare/',
             },
             {
               label: 'Build Status',
-              href: 'https://github.com/xiaoyang-sde/rocket-booster/actions',
+              href: 'https://github.com/xiaoyang-sde/reflare/actions',
             },
           ],
         },
@@ -97,11 +97,11 @@ module.exports = {
           items: [
             {
               label: 'Template',
-              href: 'https://github.com/xiaoyang-sde/rocket-booster-template',
+              href: 'https://github.com/xiaoyang-sde/reflare-template',
             },
             {
               label: 'Live Demo',
-              href: 'https://mozilla.readme.workers.dev',
+              href: 'https://mozilla.reflare.workers.dev',
             },
           ],
         },

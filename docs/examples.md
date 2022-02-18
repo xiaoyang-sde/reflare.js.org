@@ -5,46 +5,47 @@ sidebar_position: 3
 
 ## MDN Web Docs Mirror
 
-Set up a reverse proxy for [https://developer.mozilla.org](https://developer.mozilla.org):
+Set up a reverse proxy for [MDN Web Docs](https://developer.mozilla.org):
 
 ```ts
-proxy.use('/', {
+{
+  path: '/*',
   upstream: {
     domain: 'developer.mozilla.org',
     protocol: 'https',
   },
-});
+}
 ```
-
-[Live Demo](https://mozilla.readme.workers.dev/)
 
 ## WebSocket Proxy
 
-`rocket-booster` could proxy WebSocket traffic to upstream services. Set up a reverse proxy for [wss://echo.websocket.org](wss://echo.websocket.org):
+Reflare could proxy WebSocket traffic to upstream services. Set up a reverse proxy for [wss://echo.websocket.org](wss://echo.websocket.org):
 
 ```ts
-proxy.use('/', {
+{
+  path: '/*',
   upstream: {
     domain: 'echo.websocket.org',
     protocol: 'https',
   },
-});
+}
 ```
 
-## S3 Bucket with custom response behavior
+## S3 Bucket with custom response headers
 
-`rocket-booster` could set custom headers to request and response, add CORS header, or add basic authentication. Set up a reverse proxy for [https://example.s3.amazonaws.com](https://example.s3.amazonaws.com):
+Reflare could set custom headers to request and response. Set up a reverse proxy for [https://example.s3.amazonaws.com](https://example.s3.amazonaws.com):
 
 ```ts
-proxy.use('/', {
+{
+  path: '/*',
   upstream: {
     domain: 'example.s3.amazonaws.com',
     protocol: 'https',
   },
 
-  header: {
+  headers: {
     response: {
-      'x-response-header': 'Hello from rocket-booster',
+      'x-response-header': 'Hello from Reflare',
     },
   },
 
@@ -53,5 +54,5 @@ proxy.use('/', {
     methods: ['GET', 'POST'],
     credentials: true,
   },
-});
+}
 ```

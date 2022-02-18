@@ -4,71 +4,86 @@ sidebar_position: 2
 
 # 📦 Build and Deploy
 
-## Start with templates
+## Start with `reflare-template`
 
-- [Install Wrangler CLI](https://github.com/cloudflare/wrangler#installation) and generate a project from the [rocket-booster-template](https://github.com/xiaoyang-sde/rocket-booster-template)
+[Install `wrangler` CLI](https://github.com/cloudflare/wrangler#installation) and authorize `wrangler` with Cloudflare account.
 
-```sh
+```console
 npm install -g @cloudflare/wrangler
-
-wrangler generate booster-app https://github.com/xiaoyang-sde/rocket-booster-template
+wrangler login
 ```
 
-- Install dependencies and edit the options in `src/index.ts`
+Generate a new project from [reflare-template](https://github.com/xiaoyang-sde/reflare-template) and install the dependencies.
 
-```sh
-cd booster-app
-
+```console
+wrangler generate reflare-app https://github.com/xiaoyang-sde/reflare-template
+cd reflare-app
 npm install
 ```
 
-- Login and publish to Cloudflare Workers
+Edit or add route definitions in `src/index.ts`. Please read the examples and route definition section below for more details.
 
-```sh
-wrangler login
-
-wrangler publish
-```
+- Run `npm run dev` to preview Reflare with local development server provided by [Miniflare](https://miniflare.dev).
+- Run `npm run deploy` to publish Reflare on Cloudflare Workers.
 
 ## Integrate with existing project
 
-- Install the `rocket-booster` package
+Install the `reflare` package.
 
 ```console
-npm install --save rocket-booster
+npm install reflare
 ```
 
-- Import the `useProxy` function from `rocket-booster`. The function returns an object with the `use()` method, which maps route patterns to configuration objects, and `apply()` method, which takes the inbound [Request](https://developers.cloudflare.com/workers/runtime-apis/request) to the Worker, and returns the [Response](https://developers.cloudflare.com/workers/runtime-apis/request) fetched from the upstream service.
+Import `useReflare` from `reflare`. `useReflare` accepts an object of options.
+
+- `provider`: The location of the list of route definitions. (optional, defaults to `static`)
+  - `static`: Reflare loads the route definitions from `routeList`.
+  - `kv`: Reflare loads the route definitions from [Workers KV](https://developers.cloudflare.com/workers/learning/how-kv-works). (Experimental)
+- `routeList`: The initial list of route definitions. (optional, defaults to `[]`, **ignored if `provider` is not `static`**)
+- `namespace`: The Workers KV namespace that stores the list of route definitions. (**required if `provider` is `kv`**)
+
+`useReflare` returns an object with the `handle` method and `push` method.
+
+- The `handle` method takes the inbound [Request](https://developers.cloudflare.com/workers/runtime-apis/request) to the Worker and returns the [Response](https://developers.cloudflare.com/workers/runtime-apis/request) fetched from the upstream service.
+- The `push` method takes a route and appends it to `routeList`.
 
 ```ts
-import useProxy from 'rocket-booster';
+import useReflare from 'reflare';
 
-addEventListener('fetch', (event) => {
-  const proxy = useProxy();
-  proxy.use('/', {
+const handleRequest = async (
+  request: Request,
+): Promise<Response> => {
+  const reflare = await useReflare();
+
+  reflare.push({
+    path: '/*',
     upstream: {
-      domain:  'example.com',
+      domain: 'httpbin.org',
       protocol: 'https',
     },
   });
 
-  const response = proxy.apply(event.request);
-  event.respondWith(response);
+  return reflare.handle(request);
+};
+
+addEventListener('fetch', (event) => {
+  event.respondWith(handleRequest(event.request));
 });
 ```
 
-- Edit the options object to change the request and response. For example, the options below will add the header `Access-Control-Allow-Origin: *` to each response from the upstream service, which allows any origin to access the service.
+Edit the route definition to change the behavior of Reflare. For example, the route definition below let Reflare add the `Access-Control-Allow-Origin: *` header to each response from the upstream service.
 
 ```ts
-proxy.use('/', {
+{
+  path: '/*',
   upstream: {
-    domain:  'example.com',
+    domain: 'httpbin.org',
     protocol: 'https',
   },
   cors: {
     origin: '*',
   },
-});
+}
 ```
 
 - Build and publish to Cloudflare Workers
