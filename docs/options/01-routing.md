@@ -1,18 +1,26 @@
 # Routing
 
-The `proxy` object provides a `use` function that maps URL patterns to different options. The options object has an optional `methods` property that accepts a list of HTTP methods, which specifies the request methods the route will handle.
+Reflare implements express-like route matching. Reflare matches the path and HTTP method of each incoming request with the list of route definitions and forwards the request to the first matched route.
+
+- `path`: The path that matches the route
+- `methods`: The list of HTTP methods that matches the route
 
 ```ts
 // Matches all requests
-proxy.use('/', { /* ... */ });
+reflare.push({
+  path: '/*',
+  /* ... */
+});
 
-// Matches GET and POST requests with path starting with `/api`
-proxy.use('/api', {
+// Matches GET and POST requests with path `/api`
+reflare.push({
+  path: '/api',
   methods: ['GET', 'POST'],
 });
 
 // Matches GET requests with path ending with `.json` in `/data`
-proxy.use('/data/*.json', {
+reflare.push({
+  path: '/data/*.json',
   methods: ['GET'],
 });
 ```

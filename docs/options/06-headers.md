@@ -4,7 +4,8 @@
 - `response`: Sets response header coming downstream to the client. Accepts an object. (optional, defaults to `{}`)
 
 ```ts
-proxy.use('/', {
+reflare.push({
+  path: '/*',
   /* ... */
   headers: {
     request: {
