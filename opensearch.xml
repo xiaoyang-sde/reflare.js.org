@@ -4,8 +4,8 @@
   <ShortName>Reflare</ShortName>
   <Description>Search Reflare</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://booster.js.org/img/favicon.png</Image>
-  <Url type="text/html" method="get" template="https://booster.js.org/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://booster.js.org/opensearch.xml" />
-  <moz:SearchForm>https://booster.js.org/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://reflare.js.org/img/favicon.png</Image>
+  <Url type="text/html" method="get" template="https://reflare.js.org/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://reflare.js.org/opensearch.xml" />
+  <moz:SearchForm>https://reflare.js.org/</moz:SearchForm>
 </OpenSearchDescription>
