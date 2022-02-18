@@ -101,7 +101,7 @@ module.exports = {
             },
             {
               label: 'Live Demo',
-              href: 'https://mozilla.readme.workers.dev',
+              href: 'https://mozilla.reflare.workers.dev',
             },
           ],
         },

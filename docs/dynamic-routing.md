@@ -1,3 +1,6 @@
+---
+sidebar_position: 5
+---
 # 🛳️ Dynamic Route Definition (Experimental)
 
 Reflare could load the route definitions from Workers KV. Set the `provider` to `kv` and `namespace` to a Workers KV namespace (e.g. `REFLARE`) that binds to the current Worker. Reflare fetches the route definitions from `namespace` and handles each incoming request with the latest route definitions.
