@@ -5,13 +5,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Reflare',
   tagline: 'Serverless reverse proxy and load balancer library built for Cloudflare Workers.',
-  url: 'https://booster.js.org',
+  url: 'https://reflare.js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'xiaoyang-sde', // Usually your GitHub org/user name.
-  projectName: 'booster.js.org', // Usually your repo name.
+  projectName: 'reflare.js.org', // Usually your repo name.
   trailingSlash: true,
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Inter&display=swap',
@@ -20,10 +20,6 @@ module.exports = {
     algolia: {
       apiKey: '8bf676a18a51f6832092853bf43fa683',
       indexName: 'booster-js',
-    },
-    gtag: {
-      trackingID: 'G-TJRVK94CTH',
-      anonymizeIP: true,
     },
     navbar: {
       title: 'Reflare',
@@ -132,6 +128,10 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'G-TJRVK94CTH',
+          anonymizeIP: true,
         },
       },
     ],

@@ -3,9 +3,9 @@ sidebar_position: 1
 slug: /
 ---
 
-# 🚀 Introduction
+# 🚀 Reflare
 
-![Header](/img/header.png)
+![Header](/img/header.jpg)
 
 <div align="center">
 
@@ -21,7 +21,7 @@ slug: /
 
 🚀 **Reflare** is a lightweight and scalable reverse proxy and load balancing library built for [Cloudflare Workers](https://workers.cloudflare.com). It sits in front of web servers (e.g. web application, storage platform, or RESTful API), forwards HTTP requests or WebSocket traffics from clients to upstream servers and transforms responses with several optimizations to improve page loading time.
 
-- ⚡ Serverless: Deploy instantly to the auto-scaling serverless platform built by Cloudflare. No virtual machines, servers, or containers to manage.
-- ✈️ Load Balancing: Distribute incoming traffics evenly among different upstream services.
+- ⚡ Serverless: Deploy instantly to the auto-scaling serverless platform built by Cloudflare. There's no need to manage virtual machines or containers.
+- ✈️ Load Balancing: Distribute incoming traffics among different upstream services.
 - ⚙️ Hackable: Deliver unique content based on visitor attributes, conduct A/B testing, or build custom middleware to hook into the lifecycle. (Experimental)
-- 📄 TypeScript: Extensive type declaration with TSDoc.
+- 🛳️ Dynamic (Experimental): Store and update route definitions with Workers KV to avoid redundant redeployment.
