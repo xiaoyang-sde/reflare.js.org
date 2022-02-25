@@ -4,22 +4,23 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Reflare',
-  tagline: 'Serverless reverse proxy and load balancer library built for Cloudflare Workers.',
+  tagline: 'Lightweight and scalable reverse proxy and load balancing library built for Cloudflare Workers',
   url: 'https://reflare.js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'xiaoyang-sde', // Usually your GitHub org/user name.
-  projectName: 'reflare.js.org', // Usually your repo name.
+  organizationName: 'xiaoyang-sde',
+  projectName: 'reflare.js.org',
   trailingSlash: true,
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Inter&display=swap',
   ],
   themeConfig: {
     algolia: {
-      apiKey: '8bf676a18a51f6832092853bf43fa683',
-      indexName: 'booster-js',
+      appId: 'FTQF0IPUV1',
+      apiKey: '93cd9eeda627ed901ba3b2063d633f70',
+      indexName: 'reflare-js',
     },
     navbar: {
       title: 'Reflare',
@@ -116,13 +117,11 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
             'https://github.com/xiaoyang-sde/booster.js.org/edit/master/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
